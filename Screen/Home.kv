@@ -1,10 +1,8 @@
 <HomePage>:
-    MDScreen:
+    MDBoxLayout:
+        size_hint_y:.25
         MDBoxLayout:
-            orientation: 'vertical'
-            spacing: 20
-            padding: 20
-
+            orientation:"vertical"
             MDLabel:
                 text: "Welcome to the Home Page"
                 halign: "center"
@@ -14,9 +12,4 @@
                 text: "Go to Settings"
                 pos_hint: {"center_x": 0.5}
                 on_release: app.root.current = 'settings'
-
-            MDRaisedButton:
-                text: "Quiz"
-                pos_hint: {"0.2": 0.5}
-                on_release: app.root.current = 'quiz'
 
