@@ -5,9 +5,9 @@ ScreenManager:
     name: "quiz"
 
     BoxLayout:
-        orientation: "vertical"
-        padding: 20
+        orientation: 'vertical'
         spacing: 20
+        padding: 20
 
         Label:
             id: question_label
@@ -18,30 +18,25 @@ ScreenManager:
             size_hint_y: 0.4
             text_size: self.width, None
 
-        BoxLayout:
-            orientation: "vertical"
-            spacing: 10
-            size_hint_y: 0.4
+        Button:
+            id: option_a
+            text: "Option A"
+            on_press: root.select_answer("A")
 
-            Button:
-                id: option_a
-                text: "Option A"
-                on_press: root.select_answer("A")
+        Button:
+            id: option_b
+            text: "Option B"
+            on_press: root.select_answer("B")
 
-            Button:
-                id: option_b
-                text: "Option B"
-                on_press: root.select_answer("B")
+        Button:
+            id: option_c
+            text: "Option C"
+            on_press: root.select_answer("C")
 
-            Button:
-                id: option_c
-                text: "Option C"
-                on_press: root.select_answer("C")
-
-            Button:
-                id: option_d
-                text: "Option D"
-                on_press: root.select_answer("D")
+        Button:
+            id: option_d
+            text: "Option D"
+            on_press: root.select_answer("D")
 
         Label:
             id: feedback_label
