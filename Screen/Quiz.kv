@@ -1,52 +1,48 @@
-ScreenManager:
-    QuizScreen:
-
 <QuizScreen>:
-    name: "quiz"
+    MDScreen:
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            padding: 20
 
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: 20
-        padding: 20
+            MDLabel:
+                id: question_label
+                text: "Question will appear here"
+                font_size: 20
+                halign: "center"
+                valign: "middle"
+                size_hint_y: 0.4
+                text_size: self.width, None
 
-        Label:
-            id: question_label
-            text: "Question will appear here"
-            font_size: 20
-            halign: "center"
-            valign: "middle"
-            size_hint_y: 0.4
-            text_size: self.width, None
+            MDRaisedButton:
+                id: option_a
+                text: "Option A"
+                on_press: root.select_answer("A")
 
-        Button:
-            id: option_a
-            text: "Option A"
-            on_press: root.select_answer("A")
+            MDRaisedButton:
+                id: option_b
+                text: "Option B"
+                on_press: root.select_answer("B")
 
-        Button:
-            id: option_b
-            text: "Option B"
-            on_press: root.select_answer("B")
+            MDRaisedButton:
+                id: option_c
+                text: "Option C"
+                on_press: root.select_answer("C")
 
-        Button:
-            id: option_c
-            text: "Option C"
-            on_press: root.select_answer("C")
+            MDRaisedButtonButton:
+                id: option_d
+                text: "Option D"
+                on_press: root.select_answer("D")
 
-        Button:
-            id: option_d
-            text: "Option D"
-            on_press: root.select_answer("D")
+            MDLabel:
+                id: feedback_label
+                text: ""
+                font_size: 16
+                color: 0.8, 0.2, 0.2, 1
+                size_hint_y: 0.1
 
-        Label:
-            id: feedback_label
-            text: ""
-            font_size: 16
-            color: 0.8, 0.2, 0.2, 1
-            size_hint_y: 0.1
-
-        Button:
-            id: next_button
-            text: "Next Question"
-            size_hint_y: 0.1
-            on_press: root.load_next_question()
+            MDRaisedButtonButton:
+                id: next_button
+                text: "Next Question"
+                size_hint_y: 0.1
+                on_press: root.load_next_question()

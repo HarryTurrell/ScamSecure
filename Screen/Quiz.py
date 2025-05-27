@@ -107,13 +107,16 @@ for idx, item in enumerate(quiz_data, 1):
         print(f"  {letter}. {opt}")
     
     # Get user input
-    user_answer = input("Your answer (A, B, C, D): ").strip().upper()
-    
-    if user_answer in option_map and option_map[user_answer] == item["answer"]:
-        print("✅ Correct!")
+    user_answer = input("Your answer (A, B, C, D): \n(Type 'Q' or 'exit' to exit.)").strip().upper()
+        
+    if user_answer in ("EXIT", "Q"):
+        print("\nQuiz exited by user.")
+        break
+    elif user_answer in option_map and option_map[user_answer] == item["answer"]:
+        print("Correct!")
         score += 1
     else:
-        print(f"❌ Incorrect. The correct answer was: {item['answer']}")
+        print(f"Incorrect. The correct answer was: {item['answer']}")
 
 # Final score
 print(f"\nYour final score: {score} out of {len(quiz_data)}")
